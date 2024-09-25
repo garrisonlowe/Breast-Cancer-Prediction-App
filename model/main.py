@@ -29,12 +29,12 @@ def create_model(data):
     X = data.drop('diagnosis', axis=1)
     y = data['diagnosis']
     
+    # Split data into training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    
     # Scale data
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
-    
-    # Split data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
     # Train model and fit it
     model = LogisticRegression()
