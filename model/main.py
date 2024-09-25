@@ -9,7 +9,7 @@ import pickle
 # Load and clean data
 def get_clean_data():
     # Load data
-    data = pd.read_csv(r'data\cancer_data.csv')
+    data = pd.read_csv(r'data/cancer_data.csv')
     # Drop columns
     data = data.drop(['Unnamed: 32', 'id'], axis=1)
     # Map diagnosis to binary
